@@ -138,7 +138,7 @@ export const PracticeExercisesLayout = ({ practiceExercisesData }) => {
             direction={FlexBoxDirection.Column}
             justifyContent={FlexBoxJustifyContent.SpaceAround}
             alignItems={FlexBoxAlignItems.Center}
-            style={{ padding: "1rem", background: "white" }}
+            style={{ padding: "1rem", maxWidth:"100%" , minWidth:"100%"}}
             wrap={FlexBoxWrap.Wrap}
           >
             <Label>
@@ -159,12 +159,14 @@ export const PracticeExercisesLayout = ({ practiceExercisesData }) => {
                   style={{ width: "100%" }}
                   wrap={FlexBoxWrap.Wrap}
                 >
+                  <FlexBox wrap={FlexBoxWrap.Wrap}  style={{marginLeft:"2rem", maxWidth:"100%" , minWidth:"100%"}}>
                   <FlexBox className="question_flexBox" wrap={FlexBoxWrap.Wrap}>
                     <Text className="question_Text_Style" wrapping>
                       {sentence.tamil}
                     </Text>
                   </FlexBox>
-                  <FlexBox wrap={FlexBoxWrap.Wrap}>
+                  <FlexBox wrap={FlexBoxWrap.Wrap}  alignItems={FlexBoxAlignItems.Center}
+                  justifyContent={FlexBoxJustifyContent.SpaceAround}>
                     <Icon
                       name="sap-icon://process"
                       className="question_icon_Style"
@@ -182,6 +184,7 @@ export const PracticeExercisesLayout = ({ practiceExercisesData }) => {
                       onChange={(event) => onChange(event, index)}
                       valueState={valueState}
                     />
+                  </FlexBox>
                   </FlexBox>
                 </FlexBox>
               ))}

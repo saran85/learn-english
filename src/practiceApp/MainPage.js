@@ -29,7 +29,7 @@ export const MainPage = ({
         padding: "1rem",
       }}
     >
-      <Title level={TitleLevel.H4} style={{ margin: "1rem",color:"Background" }}>
+      <Title level={TitleLevel.H4} style={{ margin: "1rem",color:"Background", flexWrap:"wrap" }}>
         {chooseTitle}
       </Title>
       <Panel className="flex-container" headerText="Daily Practice">

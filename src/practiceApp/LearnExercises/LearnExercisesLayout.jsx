@@ -61,23 +61,30 @@ export const LearnExercisesLayout = ({learnSentencesData}) => {
       >
         <Title level={TitleLevel.H4}>Well Done </Title>
       </Dialog>
-      <div className="main_Container">
+      <FlexBox
+        direction={FlexBoxDirection.Column}
+        alignItems={FlexBoxAlignItems.Center}
+      >
         <Title
           level={TitleLevel.H3}
-          style={{ margin: "1rem", paddingTop: "1rem" }}
+          style={{
+            marginBottom: "1rem",
+            marginTop: "5rem",
+            paddingTop: "1rem",
+          }}
         >
           Basic Spoken English in Tamil
         </Title>
         <Panel
           headerText="Learn Exercises 1 to 50"
-          style={{ border: "#B7C9F2", marginLeft: "1rem", marginRight: "1rem" }}
+          style={{marginLeft: "1rem", marginRight: "1rem" }}
         >
           <FlexBox
             direction={FlexBoxDirection.Column}
             justifyContent={FlexBoxJustifyContent.Center}
             alignItems={FlexBoxAlignItems.Center}
             wrap={FlexBoxWrap.Wrap}
-            style={{ padding: "1rem", background: "white" }}
+            style={{ padding: "1rem",maxWidth:"100%" , minWidth:"100%"}}
           >
             <Label>
               Communication skills can be improved through daily practice.
@@ -97,12 +104,14 @@ export const LearnExercisesLayout = ({learnSentencesData}) => {
                   wrap={FlexBoxWrap.Wrap}
                   style={{ width: "100%"}}
                 >
+                  <FlexBox wrap={FlexBoxWrap.Wrap}  style={{marginLeft:"2rem", maxWidth:"100%" , minWidth:"100%"}}>
                   <FlexBox className="question_flexBox">
                     <Text className="question_Text_Style" wrapping>
                       { sentence.tamil}
                     </Text>
                   </FlexBox>
-                  <FlexBox wrap={FlexBoxWrap.Wrap}>
+                  <FlexBox wrap={FlexBoxWrap.Wrap} alignItems={FlexBoxAlignItems.Center}
+                  justifyContent={FlexBoxJustifyContent.SpaceAround}>
                     <Icon
                       name="sap-icon://process"
                       className="question_icon_Style"
@@ -117,6 +126,7 @@ export const LearnExercisesLayout = ({learnSentencesData}) => {
                       {sentence.english}
                     </Text>
                   </FlexBox>
+                  </FlexBox>
                 </FlexBox>
               ))}
 
@@ -126,7 +136,7 @@ export const LearnExercisesLayout = ({learnSentencesData}) => {
           </FlexBox>
         </Panel>
         <Footer/>
-      </div>
+      </FlexBox>
     </>
   );
 };
