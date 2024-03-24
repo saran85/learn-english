@@ -84,7 +84,7 @@ export const LearnExercisesLayout = ({learnSentencesData}) => {
             justifyContent={FlexBoxJustifyContent.Center}
             alignItems={FlexBoxAlignItems.Center}
             wrap={FlexBoxWrap.Wrap}
-            style={{ padding: "1rem",maxWidth:"100%" , minWidth:"100%"}}
+            style={{ padding: "1rem",maxWidth:"100%" , minWidth:"100%", marginLeft:"8rem",marginBottom:"8rem"}}
           >
             <Label>
               Communication skills can be improved through daily practice.
@@ -102,7 +102,7 @@ export const LearnExercisesLayout = ({learnSentencesData}) => {
                   alignItems={FlexBoxAlignItems.Center}
                   justifyContent={FlexBoxJustifyContent.SpaceAround}
                   wrap={FlexBoxWrap.Wrap}
-                  style={{ width: "100%"}}
+                  style={{ width: "100%",marginTop:"2rem"}}
                 >
                   <FlexBox wrap={FlexBoxWrap.Wrap}  style={{marginLeft:"2rem", maxWidth:"100%" , minWidth:"100%"}}>
                   <FlexBox className="question_flexBox">
@@ -130,7 +130,7 @@ export const LearnExercisesLayout = ({learnSentencesData}) => {
                 </FlexBox>
               ))}
 
-            <Button onClick={onNextClick} disabled={buttonDisable}>
+            <Button onClick={onNextClick} disabled={buttonDisable}style={{marginRight:"9rem"}}>
               Next
             </Button>
           </FlexBox>

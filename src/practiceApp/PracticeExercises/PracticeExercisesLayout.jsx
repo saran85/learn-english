@@ -112,6 +112,7 @@ export const PracticeExercisesLayout = ({ practiceExercisesData }) => {
       <FlexBox
         direction={FlexBoxDirection.Column}
         alignItems={FlexBoxAlignItems.Center}
+        
       >
         <Title
           level={TitleLevel.H3}
@@ -138,7 +139,7 @@ export const PracticeExercisesLayout = ({ practiceExercisesData }) => {
             direction={FlexBoxDirection.Column}
             justifyContent={FlexBoxJustifyContent.SpaceAround}
             alignItems={FlexBoxAlignItems.Center}
-            style={{ padding: "1rem", maxWidth:"100%" , minWidth:"100%"}}
+            style={{ padding: "1rem", maxWidth:"100%" , minWidth:"100%", marginLeft:"8rem"}}
             wrap={FlexBoxWrap.Wrap}
           >
             <Label>
@@ -156,7 +157,7 @@ export const PracticeExercisesLayout = ({ practiceExercisesData }) => {
                   direction={FlexBoxDirection.Row}
                   alignItems={FlexBoxAlignItems.Center}
                   justifyContent={FlexBoxJustifyContent.SpaceAround}
-                  style={{ width: "100%" }}
+                  style={{ width: "100%",marginTop:"2rem"}}
                   wrap={FlexBoxWrap.Wrap}
                 >
                   <FlexBox wrap={FlexBoxWrap.Wrap}  style={{marginLeft:"2rem", maxWidth:"100%" , minWidth:"100%"}}>
@@ -189,7 +190,7 @@ export const PracticeExercisesLayout = ({ practiceExercisesData }) => {
                 </FlexBox>
               ))}
 
-            <Button onClick={onNextClick} disabled={buttonDisable}>
+            <Button onClick={onNextClick} disabled={buttonDisable} style={{marginRight:"8rem"}}>
               Next
             </Button>
           </FlexBox>
