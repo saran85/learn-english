@@ -112,13 +112,13 @@ export const PracticeExercisesLayout = ({
       </Dialog>
         <Title
           level={TitleLevel.H3}
-          style={{ margin: "1rem", paddingTop: "1rem" }}
+          style={{marginLeft:"1rem",marginBottom:"1rem",marginTop:"5rem", paddingTop: "1rem" }}
         >
           Basic Spoken English in Tamil
         </Title>
         <Panel
           headerText={`Practice Exercises 1 to 50`}
-          style={{ border: "#B7C9F2", marginLeft: "1rem", marginRight: "1rem" }}
+          style={{ marginLeft: "1rem", marginRight: "1rem",marginBottom:"8rem"}}
         >
           <FlexBox justifyContent={FlexBoxJustifyContent.End}>
           <Label>{`You got ${correctCounts} translations correct!`}</Label>
