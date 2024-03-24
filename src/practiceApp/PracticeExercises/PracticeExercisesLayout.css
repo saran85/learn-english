@@ -1,7 +1,7 @@
 .main_Container {
   margin-bottom: 10rem;
   margin-top: 10rem;
-  height: 90vh;
+  height: 60em;
   background: linear-gradient(
     90deg,
     #b54287,
@@ -38,4 +38,16 @@
   padding: 1rem;
   max-width: 30em;
   min-width: 30em;
+}
+.responsive-panel {
+  margin-left: 1rem;
+  margin-right: 1rem;
+  margin-bottom: 8rem;
+}
+
+@media screen and (max-width: 768px) {
+  .responsive-panel {
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+  }
 }

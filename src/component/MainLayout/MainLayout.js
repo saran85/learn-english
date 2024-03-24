@@ -123,7 +123,7 @@ export const MainLayout = () => {
           btnName={learn_Sentence}
           btnId={btnId}
           onButtonClick={onButtonLearnClick}
-          backgroundColor="#B7C9F2"
+          backgroundColor="#6c6d2d"
           chooseTitle="Choose any one to learn."
         />
       )}
@@ -133,7 +133,7 @@ export const MainLayout = () => {
           btnName={test_Sentence}
           btnId={btnTestId}
           onButtonClick={onButtonTextClick}
-          backgroundColor="#FFB5DA"
+          backgroundColor="#6a5e0e"
           chooseTitle="Pick any of them to practice for the test."
         />
       )}

@@ -16,6 +16,7 @@ import {
   Bar,
   ButtonDesign,
   Panel,
+  FlexBoxWrap,
 } from "@ui5/webcomponents-react";
 import "@ui5/webcomponents-icons/dist/slim-arrow-right";
 import "@ui5/webcomponents-icons/dist/process";
@@ -75,7 +76,7 @@ export const LearnExercisesLayout = ({learnSentencesData}) => {
             direction={FlexBoxDirection.Column}
             justifyContent={FlexBoxJustifyContent.Center}
             alignItems={FlexBoxAlignItems.Center}
-            wrap="Wrap"
+            wrap={FlexBoxWrap.Wrap}
             style={{ padding: "1rem", background: "white" }}
           >
             <Label>
@@ -93,7 +94,7 @@ export const LearnExercisesLayout = ({learnSentencesData}) => {
                   direction={FlexBoxDirection.Row}
                   alignItems={FlexBoxAlignItems.Center}
                   justifyContent={FlexBoxJustifyContent.SpaceAround}
-                  wrap="Wrap"
+                  wrap={FlexBoxWrap.Wrap}
                   style={{ width: "100%"}}
                 >
                   <FlexBox className="question_flexBox">
@@ -101,7 +102,7 @@ export const LearnExercisesLayout = ({learnSentencesData}) => {
                       { sentence.tamil}
                     </Text>
                   </FlexBox>
-                  <FlexBox wrap="Wrap">
+                  <FlexBox wrap={FlexBoxWrap.Wrap}>
                     <Icon
                       name="sap-icon://process"
                       className="question_icon_Style"
@@ -111,7 +112,7 @@ export const LearnExercisesLayout = ({learnSentencesData}) => {
                       className="question_icon_Style"
                     />
                   </FlexBox>
-                  <FlexBox className="answer_flexBox" wrap="Wrap">
+                  <FlexBox className="answer_flexBox" wrap={FlexBoxWrap.Wrap}>
                     <Text className="answer_Text_Style" wrapping>
                       {sentence.english}
                     </Text>

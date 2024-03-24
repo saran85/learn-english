@@ -1,0 +1,19 @@
+
+.flex-container {
+    display:inline-flexbox;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin-left: "1rem"; margin-right: "1rem";
+  }
+
+@media screen and (max-width: 768px) {
+    .flex-container {
+      flex-direction: column;
+      align-items: center; /* Optional: Center items vertically */
+    }
+  }
+  @media screen and (max-width: 768px) {
+    .button {
+      width: 100%; /* Make buttons full width on smaller screens */
+    }
+  }
