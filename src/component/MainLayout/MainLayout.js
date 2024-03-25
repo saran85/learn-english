@@ -10,6 +10,8 @@ import {
   FlexBoxJustifyContent,
   Title,
   PageBackgroundDesign,
+  FlexBoxWrap,
+  FlexBoxAlignItems,
 } from "@ui5/webcomponents-react";
 import { useNavigate } from "react-router-dom";
 import { MainPage } from "../../practiceApp/MainPage";
@@ -78,68 +80,73 @@ export const MainLayout = () => {
 
   return (
     <>
-    <DynamicPage
-      backgroundDesign={PageBackgroundDesign.Solid}
-      headerCollapsed={false}
-      headerContentPinnable={false}
-      headerTitle={
-        <DynamicPageTitle
-          header={
-            <Title style={{ marginTop: "4rem", paddingTop: "1rem" }}>
-              Basic Spoken English in Tamil
-            </Title>
-          }
-        />
-      }
-      headerContent={
-        <DynamicPageHeader>
-          <FlexBox
-            
-            direction={FlexBoxDirection.Row}
-            justifyContent={FlexBoxJustifyContent.Center}
-          >
-            <Button
-              design={ButtonDesign.Emphasized}
-              onClick={onClickLearn}
-              data-id="learn_exercises"
-              style={{ width: "15em", fontSize: "1.3rem" }}
+      <DynamicPage
+        backgroundDesign={PageBackgroundDesign.Solid}
+        headerCollapsed={false}
+        headerContentPinnable={false}
+        headerTitle={
+          <DynamicPageTitle
+            header={
+              <Title style={{ marginTop: "4rem", paddingTop: "1rem" }}>
+                Basic Spoken English in Tamil
+              </Title>
+            }
+          />
+        }
+        headerContent={
+          <DynamicPageHeader>
+            <FlexBox
+              wrap={FlexBoxWrap.Wrap}
+              justifyContent={FlexBoxJustifyContent.Center}
+              alignItems={FlexBoxAlignItems.Center}
             >
-              Learn Exercises
-            </Button>
-            <Button
-              design={ButtonDesign.Negative}
-              onClick={onClickTest}
-              data-id="test_Exercises"
-              style={{ width: "15em", fontSize: "1.3rem" }}
-            >
-              Test Practice Exercises
-            </Button>
-          </FlexBox>
-        </DynamicPageHeader>
-      }
-    >
-      {learSentence && (
-        <MainPage
-          btnName={learn_Sentence}
-          btnId={btnId}
-          onButtonClick={onButtonLearnClick}
-          backgroundColor="#6c6d2d"
-          chooseTitle="Choose any one to learn."
-        />
-      )}
+              <FlexBox
+                wrap={FlexBoxWrap.Wrap}
+                direction={FlexBoxDirection.Row}
+                justifyContent={FlexBoxJustifyContent.SpaceBetween}
+              >
+                <Button
+                  design={ButtonDesign.Emphasized}
+                  onClick={onClickLearn}
+                  data-id="learn_exercises"
+                  style={{ width: "15em", fontSize: "1.3rem" ,margin:"0.5rem"}}
+                >
+                  Learn Exercises
+                </Button>
+                <Button
+                  design={ButtonDesign.Negative}
+                  onClick={onClickTest}
+                  data-id="test_Exercises"
+                  style={{ width: "15em", fontSize: "1.3rem" ,margin:"0.5rem"}}
+                >
+                  Test Practice Exercises
+                </Button>
+              </FlexBox>
+            </FlexBox>
+          </DynamicPageHeader>
+        }
+      >
+        {learSentence && (
+          <MainPage
+            btnName={learn_Sentence}
+            btnId={btnId}
+            onButtonClick={onButtonLearnClick}
+            backgroundColor="#6c6d2d"
+            chooseTitle="Choose any one to learn."
+          />
+        )}
 
-      {testSentence && (
-        <MainPage
-          btnName={test_Sentence}
-          btnId={btnTestId}
-          onButtonClick={onButtonTextClick}
-          backgroundColor="#6a5e0e"
-          chooseTitle="Pick any of them to practice for the test."
-        />
-      )}
-      
-    </DynamicPage>
-    <Footer/>
+        {testSentence && (
+          <MainPage
+            btnName={test_Sentence}
+            btnId={btnTestId}
+            onButtonClick={onButtonTextClick}
+            backgroundColor="#6a5e0e"
+            chooseTitle="Pick any of them to practice for the test."
+          />
+        )}
+      </DynamicPage>
+      <Footer />
     </>
   );
 };

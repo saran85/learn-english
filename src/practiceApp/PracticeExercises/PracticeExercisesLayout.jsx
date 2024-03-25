@@ -108,66 +108,79 @@ export const PracticeExercisesLayout = ({ practiceExercisesData }) => {
         style={{ border: "solid red" }}
       >
         <Title level={TitleLevel.H4}>Well Done </Title>
+       
+          <Label>You got <span style={{fontWeight:"bold",fontSize:18}}>{correctCounts}  </span>translations correct!</Label>
       </Dialog>
       <FlexBox
         direction={FlexBoxDirection.Column}
         alignItems={FlexBoxAlignItems.Center}
-        
       >
-        <Title
-          level={TitleLevel.H3}
+        <Text
           style={{
             marginBottom: "1rem",
             marginTop: "5rem",
             paddingTop: "1rem",
+            fontWeight: "bolder",
+            fontSize: 26,
           }}
         >
           Basic Spoken English in Tamil
-        </Title>
-        <Panel
-          headerText={`Practice Exercises 1 to 50`}
-          className="responsive-panel"
-        >
-          <FlexBox
-            justifyContent={FlexBoxJustifyContent.End}
-            wrap={FlexBoxWrap.Wrap}
-          >
-            <Label>{`You got ${correctCounts} translations correct!`}</Label>
-          </FlexBox>
+        </Text>
+      </FlexBox>
+      <Panel
+        headerText={`Practice Exercises 1 to 50`}
+        className="responsive-panel"
+      >
 
-          <FlexBox
-            direction={FlexBoxDirection.Column}
-            justifyContent={FlexBoxJustifyContent.SpaceAround}
-            alignItems={FlexBoxAlignItems.Center}
-            style={{ padding: "1rem", maxWidth:"100%" , minWidth:"100%", marginLeft:"8rem"}}
-            wrap={FlexBoxWrap.Wrap}
-          >
-            <Label>
-              Communication skills can be improved through daily practice.
-            </Label>
-            <ProgressIndicator
-              value={progressBar}
-              valueState={ValueState.Success}
-            />
-            {getPracticeExercisesData
-              .slice(startIndex, startIndex + 5)
-              .map((sentence, index) => (
+        <FlexBox
+          direction={FlexBoxDirection.Column}
+          justifyContent={FlexBoxJustifyContent.SpaceAround}
+          alignItems={FlexBoxAlignItems.Center}
+          style={{
+            padding: "2rem",
+            maxWidth: "fit-content",
+            minWidth: "fit-content",
+            marginBottom: "8rem",
+            marginLeft: "5rem",
+          }}
+          wrap={FlexBoxWrap.Wrap}
+        >
+          <Label>
+            Communication skills can be improved through daily practice.
+          </Label>
+          <ProgressIndicator
+            value={progressBar}
+            valueState={ValueState.Success}
+          />
+          {getPracticeExercisesData
+            .slice(startIndex, startIndex + 5)
+            .map((sentence, index) => (
+              <FlexBox
+                key={index}
+                direction={FlexBoxDirection.Row}
+                alignItems={FlexBoxAlignItems.Center}
+                justifyContent={FlexBoxJustifyContent.SpaceAround}
+                style={{ width: "100%", marginTop: "2rem" }}
+                wrap={FlexBoxWrap.Wrap}
+              >
                 <FlexBox
-                  key={index}
-                  direction={FlexBoxDirection.Row}
-                  alignItems={FlexBoxAlignItems.Center}
-                  justifyContent={FlexBoxJustifyContent.SpaceAround}
-                  style={{ width: "100%",marginTop:"2rem"}}
                   wrap={FlexBoxWrap.Wrap}
+                  style={{
+                    marginLeft: "2rem",
+                    maxWidth: "fit-content",
+                    minWidth: "fit-content",
+                  }}
                 >
-                  <FlexBox wrap={FlexBoxWrap.Wrap}  style={{marginLeft:"2rem", maxWidth:"100%" , minWidth:"100%"}}>
                   <FlexBox className="question_flexBox" wrap={FlexBoxWrap.Wrap}>
                     <Text className="question_Text_Style" wrapping>
                       {sentence.tamil}
                     </Text>
                   </FlexBox>
-                  <FlexBox wrap={FlexBoxWrap.Wrap}  alignItems={FlexBoxAlignItems.Center}
-                  justifyContent={FlexBoxJustifyContent.SpaceAround}>
+                  <FlexBox
+                    wrap={FlexBoxWrap.Wrap}
+                    alignItems={FlexBoxAlignItems.Center}
+                    justifyContent={FlexBoxJustifyContent.SpaceAround}
+                  >
                     <Icon
                       name="sap-icon://process"
                       className="question_icon_Style"
@@ -186,16 +199,15 @@ export const PracticeExercisesLayout = ({ practiceExercisesData }) => {
                       valueState={valueState}
                     />
                   </FlexBox>
-                  </FlexBox>
                 </FlexBox>
-              ))}
+              </FlexBox>
+            ))}
 
-            <Button onClick={onNextClick} disabled={buttonDisable} style={{marginRight:"8rem"}}>
-              Next
-            </Button>
-          </FlexBox>
-        </Panel>
-      </FlexBox>
+          <Button onClick={onNextClick} disabled={buttonDisable}>
+            Next
+          </Button>
+        </FlexBox>
+      </Panel>
       <Footer />
     </>
   );

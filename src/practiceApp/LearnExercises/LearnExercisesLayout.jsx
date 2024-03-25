@@ -25,7 +25,7 @@ import { useNavigate } from "react-router-dom";
 import { EASY_ENGLISH_ROUTES } from "../../component/router/routes";
 import { Footer } from "../../component/Footer/Footer";
 
-export const LearnExercisesLayout = ({learnSentencesData}) => {
+export const LearnExercisesLayout = ({ learnSentencesData }) => {
   const getLearnSentencesData = learnSentencesData;
   const [startIndex, setStartIndex] = React.useState(0);
   const [buttonDisable, setButtonDisable] = React.useState(false);
@@ -65,53 +65,68 @@ export const LearnExercisesLayout = ({learnSentencesData}) => {
         direction={FlexBoxDirection.Column}
         alignItems={FlexBoxAlignItems.Center}
       >
-        <Title
-          level={TitleLevel.H3}
+        <Text
           style={{
             marginBottom: "1rem",
             marginTop: "5rem",
             paddingTop: "1rem",
+            fontWeight: "bolder",
+            fontSize: 26,
           }}
         >
           Basic Spoken English in Tamil
-        </Title>
-        <Panel
-          headerText="Learn Exercises 1 to 50"
-          style={{marginLeft: "1rem", marginRight: "1rem" }}
+        </Text>
+      </FlexBox>
+      <Panel headerText="Learn Exercises 1 to 50">
+        <FlexBox
+          direction={FlexBoxDirection.Column}
+          justifyContent={FlexBoxJustifyContent.Center}
+          alignItems={FlexBoxAlignItems.Center}
+          wrap={FlexBoxWrap.Wrap}
+          style={{
+            padding: "4rem",
+            maxWidth: "fit-content",
+            minWidth: "fit-content",
+            marginBottom: "8rem",
+            marginLeft: "5rem",
+          }}
         >
-          <FlexBox
-            direction={FlexBoxDirection.Column}
-            justifyContent={FlexBoxJustifyContent.Center}
-            alignItems={FlexBoxAlignItems.Center}
-            wrap={FlexBoxWrap.Wrap}
-            style={{ padding: "1rem",maxWidth:"100%" , minWidth:"100%", marginLeft:"8rem",marginBottom:"8rem"}}
-          >
-            <Label>
-              Communication skills can be improved through daily practice.
-            </Label>
-            <ProgressIndicator
-              value={progressBar}
-              valueState={ValueState.Success}
-            />
-            {getLearnSentencesData
-              .slice(startIndex, startIndex + 5)
-              .map((sentence, index) => (
+          <Label>
+            Communication skills can be improved through daily practice.
+          </Label>
+          <ProgressIndicator
+            value={progressBar}
+            valueState={ValueState.Success}
+          />
+          {getLearnSentencesData
+            .slice(startIndex, startIndex + 5)
+            .map((sentence, index) => (
+              <FlexBox
+                key={index}
+                direction={FlexBoxDirection.Row}
+                alignItems={FlexBoxAlignItems.Center}
+                justifyContent={FlexBoxJustifyContent.SpaceAround}
+                wrap={FlexBoxWrap.Wrap}
+                style={{ width: "100%", marginTop: "2rem" }}
+              >
                 <FlexBox
-                  key={index}
-                  direction={FlexBoxDirection.Row}
-                  alignItems={FlexBoxAlignItems.Center}
-                  justifyContent={FlexBoxJustifyContent.SpaceAround}
                   wrap={FlexBoxWrap.Wrap}
-                  style={{ width: "100%",marginTop:"2rem"}}
+                  style={{
+                    marginLeft: "2rem",
+                    maxWidth: "fit-content",
+                    minWidth: "fit-content",
+                  }}
                 >
-                  <FlexBox wrap={FlexBoxWrap.Wrap}  style={{marginLeft:"2rem", maxWidth:"100%" , minWidth:"100%"}}>
                   <FlexBox className="question_flexBox">
                     <Text className="question_Text_Style" wrapping>
-                      { sentence.tamil}
+                      {sentence.tamil}
                     </Text>
                   </FlexBox>
-                  <FlexBox wrap={FlexBoxWrap.Wrap} alignItems={FlexBoxAlignItems.Center}
-                  justifyContent={FlexBoxJustifyContent.SpaceAround}>
+                  <FlexBox
+                    wrap={FlexBoxWrap.Wrap}
+                    alignItems={FlexBoxAlignItems.Center}
+                    justifyContent={FlexBoxJustifyContent.SpaceAround}
+                  >
                     <Icon
                       name="sap-icon://process"
                       className="question_icon_Style"
@@ -126,17 +141,17 @@ export const LearnExercisesLayout = ({learnSentencesData}) => {
                       {sentence.english}
                     </Text>
                   </FlexBox>
-                  </FlexBox>
                 </FlexBox>
-              ))}
+              </FlexBox>
+            ))}
 
-            <Button onClick={onNextClick} disabled={buttonDisable}style={{marginRight:"9rem"}}>
-              Next
-            </Button>
-          </FlexBox>
-        </Panel>
-        <Footer/>
-      </FlexBox>
+          <Button onClick={onNextClick} disabled={buttonDisable}>
+            Next
+          </Button>
+        </FlexBox>
+      </Panel>
+
+      <Footer />
     </>
   );
 };
